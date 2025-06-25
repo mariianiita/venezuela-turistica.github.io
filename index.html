@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Venezuela Turística | Descubre sus Maravillas</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --color-primary: #FF6B6B;
+            --color-secondary: #4ECDC4;
+            --color-dark: #292F36;
+            --color-light: #F7FFF7;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4e8f0 100%);
+            color: var(--color-dark);
+        }
+        
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+                        url("imagenes/logo.jpg");
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+        }
+        
+        .hero h1 {
+            font-size: 4rem;
+            margin: 0;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        
+        .hero p {
+            font-size: 1.5rem;
+            max-width: 800px;
+        }
+        
+        .btn-explore {
+            background-color: var(--color-primary);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 20px;
+            transition: all 0.3s;
+        }
+        
+        .btn-explore:hover {
+            background-color: var(--color-secondary);
+            transform: translateY(-3px);
+        }
+        
+        .places-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 2rem;
+            gap: 2rem;
+        }
+        
+        .place-card {
+            width: 350px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            background: white;
+        }
+        
+        .place-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .place-img {
+            height: 250px;
+            width: 100%;
+            object-fit: cover;
+        }
+        
+        .place-info {
+            padding: 1.5rem;
+        }
+        
+        .place-info h2 {
+            color: var(--color-primary);
+            margin-top: 0;
+        }
+        
+        .floating-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: var(--color-primary);
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.5rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            z-index: 100;
+            transition: all 0.3s;
+        }
+        
+        .floating-btn:hover {
+            transform: scale(1.1);
+            background-color: var(--color-secondary);
+        }
+        
+        footer {
+            background-color: var(--color-dark);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 2rem;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .place-card {
+            animation: fadeIn 0.5s ease-in-out;
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Venezuela Turística</h1>
+        <p>Descubre los paisajes más impresionantes de nuestro país</p>
+        <a href="#lugares" class="btn-explore">Explorar</a>
+    </section>
+
+    <!-- Lugares Turísticos -->
+    <section id="lugares" class="places-container">
+        <!-- Tarjeta 1 -->
+        <div class="place-card">
+            <img src="imagenes/salto-angel.jpg" alt="Salto Ángel" class="place-img">
+            <div class="place-info">
+                <h2>Salto Ángel</h2>
+                <p>La cascada más alta del mundo, con 979 metros de caída libre. Ubicada en el Parque Nacional Canaima, es Patrimonio de la Humanidad por la UNESCO.</p>
+            </div>
+        </div>
+
+        <!-- Tarjeta 2 -->
+        <div class="place-card">
+            <img src="imagenes/los-roques.jpg" alt="Los Roques" class="place-img">
+            <div class="place-info">
+                <h2>Archipiélago Los Roques</h2>
+                <p>Paraíso de aguas cristalinas y arena blanca, ideal para el buceo, snorkel y disfrutar de la naturaleza en estado puro.</p>
+            </div>
+        </div>
+
+        <!-- Tarjeta 3 -->
+        <div class="place-card">
+            <img src="imagenes/merida.jpeg" alt="Mérida" class="place-img">
+            <div class="place-info">
+                <h2>Mérida y el Pico Bolívar</h2>
+                <p>La ciudad de los caballeros, rodeada por los Andes venezolanos. Hogar del teleférico más alto y largo del mundo.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Botón flotante -->
+    <div class="floating-btn" id="scrollTopBtn">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <!-- Footer simplificado -->
+    <footer>
+        <p>Venezuela Turística | Mariana Rocca 🤞🇻🇪🏝️🌄🏝️🏞️</p>
+    </footer>
+
+    <script>
+        // Botón para volver arriba
+        const scrollTopBtn = document.getElementById('scrollTopBtn');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                scrollTopBtn.style.display = 'flex';
+            } else {
+                scrollTopBtn.style.display = 'none';
+            }
+        });
+        
+        scrollTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
+</body>
+</html>
